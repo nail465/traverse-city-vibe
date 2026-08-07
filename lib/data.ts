@@ -57,13 +57,17 @@ function youtubeSearch(name: string) {
   return `https://www.youtube.com/results?search_query=${encodeURIComponent(name)}`;
 }
 
+// All event dates below are intentionally set in the future relative to today
+// so the site never shows a stale "upcoming" event. Each band's lineup entry
+// is cross-checked against the band roster below (see homeVenueSlug / upcomingShows)
+// so "who is playing where" stays consistent across Events, Bands, and Venues.
 export const events: EventItem[] = [
   {
     slug: "little-fleet-live-band-night",
     name: "Live Band Night",
     venue: "The Little Fleet",
     venueSlug: "the-little-fleet",
-    date: "2026-07-24",
+    date: "2026-08-14",
     time: "8:00 PM",
     image:
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/001bc498-6c45-4091-960c-d92bbd226a55.png",
@@ -79,7 +83,7 @@ export const events: EventItem[] = [
     name: "Acoustic Sessions",
     venue: "7 Monks Taproom",
     venueSlug: "7-monks-taproom",
-    date: "2026-07-25",
+    date: "2026-08-15",
     time: "7:00 PM",
     image:
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/0f8f03c3-a5fc-41b8-bf5f-02b94e122a4a.png",
@@ -95,7 +99,7 @@ export const events: EventItem[] = [
     name: "Brewpub Band Showcase",
     venue: "Rare Bird Brewpub",
     venueSlug: "rare-bird-brewpub",
-    date: "2026-07-26",
+    date: "2026-08-16",
     time: "9:00 PM",
     image:
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/7597c6a3-7d0e-4a80-a3fc-0374a625d3cb.png",
@@ -111,7 +115,7 @@ export const events: EventItem[] = [
     name: "Downtown Summer Street Fest",
     venue: "Front Street",
     venueSlug: "the-little-fleet",
-    date: "2026-07-27",
+    date: "2026-08-21",
     time: "5:00 PM",
     image:
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/a2f4aa64-3fed-43b9-98cd-7a5f17235cb6.png",
@@ -127,7 +131,7 @@ export const events: EventItem[] = [
     name: "Rooftop DJ Night",
     venue: "Low Bar",
     venueSlug: "low-bar",
-    date: "2026-07-31",
+    date: "2026-08-22",
     time: "10:00 PM",
     image:
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/1200bc10-9c81-4b1b-aaf6-33afbd437fd9.png",
@@ -143,7 +147,7 @@ export const events: EventItem[] = [
     name: "Lakeside Sunset Sessions",
     venue: "West End Beach",
     venueSlug: "taproot-cider-house",
-    date: "2026-08-02",
+    date: "2026-08-28",
     time: "7:30 PM",
     image:
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/e1e1591e-097f-4da9-b765-003c7d118c07.png",
@@ -168,7 +172,7 @@ export const bands: BandItem[] = [
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/1f20984d-8a7d-4e3a-a2e8-f1da3277057a.png",
     basedIn: "Traverse City, MI",
     homeVenueSlug: "the-little-fleet",
-    upcomingShows: ["Live Band Night — The Little Fleet — Jul 24", "Downtown Summer Street Fest — Jul 27"],
+    upcomingShows: ["Live Band Night — The Little Fleet — Aug 14", "Downtown Summer Street Fest — Aug 21"],
     socials: [
       { label: "Instagram", url: instagramSearch("The Neon Pines Traverse City") },
       { label: "Spotify", url: spotifySearch("The Neon Pines") },
@@ -186,7 +190,11 @@ export const bands: BandItem[] = [
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/877f972b-4e6c-489d-a077-4872ec402f80.png",
     basedIn: "Traverse City, MI",
     homeVenueSlug: "7-monks-taproom",
-    upcomingShows: ["Acoustic Sessions — 7 Monks Taproom — Jul 25", "Lakeside Sunset Sessions — Aug 2"],
+    upcomingShows: [
+      "Acoustic Sessions — 7 Monks Taproom — Aug 15",
+      "Downtown Summer Street Fest — Aug 21",
+      "Lakeside Sunset Sessions — Aug 28",
+    ],
     socials: [
       { label: "Instagram", url: instagramSearch("Maple and Vine Traverse City") },
       { label: "YouTube", url: youtubeSearch("Maple and Vine Traverse City acoustic duo") },
@@ -204,7 +212,7 @@ export const bands: BandItem[] = [
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/d9c6e3fd-e28e-471f-b2e6-7614797960f2.png",
     basedIn: "Traverse City, MI",
     homeVenueSlug: "rare-bird-brewpub",
-    upcomingShows: ["Brewpub Band Showcase — Rare Bird Brewpub — Jul 26"],
+    upcomingShows: ["Brewpub Band Showcase — Rare Bird Brewpub — Aug 16"],
     socials: [{ label: "Instagram", url: instagramSearch("Bayside Funk Collective") }],
     youtubeId: "dQw4w9WgXcQ",
   },
@@ -219,7 +227,7 @@ export const bands: BandItem[] = [
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/55ae690d-5902-4ca4-a9d1-c0821dabbeb1.png",
     basedIn: "Grand Traverse County, MI",
     homeVenueSlug: "the-little-fleet",
-    upcomingShows: ["Downtown Summer Street Fest — Jul 27"],
+    upcomingShows: ["Downtown Summer Street Fest — Aug 21"],
     socials: [{ label: "Instagram", url: instagramSearch("Cherry Capital Horns") }],
   },
   {
@@ -233,7 +241,7 @@ export const bands: BandItem[] = [
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/ae7e6266-0aa7-484f-ae98-88d8e084d00b.png",
     basedIn: "Traverse City, MI",
     homeVenueSlug: "rare-bird-brewpub",
-    upcomingShows: ["Brewpub Band Showcase — Rare Bird Brewpub — Jul 26"],
+    upcomingShows: ["Brewpub Band Showcase — Rare Bird Brewpub — Aug 16"],
     socials: [{ label: "Instagram", url: instagramSearch("The Amber Room band Traverse City") }],
   },
   {
@@ -247,8 +255,22 @@ export const bands: BandItem[] = [
       "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/aee09f8c-ddaf-4681-9b57-48df660ae697.png",
     basedIn: "Traverse City, MI",
     homeVenueSlug: "the-little-fleet",
-    upcomingShows: ["Live Band Night — The Little Fleet — Jul 24"],
+    upcomingShows: ["Live Band Night — The Little Fleet — Aug 14"],
     socials: [{ label: "Instagram", url: instagramSearch("Harbor Static jazz quartet") }],
+  },
+  {
+    slug: "dj-bay-static",
+    name: "DJ Bay Static",
+    genre: "House / DJ",
+    bio: "Traverse City's go-to rooftop DJ — deep house and bay-view sunsets.",
+    fullBio:
+      "DJ Bay Static has spun the late-night rooftop slot at Low Bar for two summers running, mixing deep house and disco edits for the after-dinner crowd until close.",
+    image:
+      "https://galaxy-prod.tlcdn.com/gen/user_309ZPDU43zHtpzFQyCTgQb0bTcM/1200bc10-9c81-4b1b-aaf6-33afbd437fd9.png",
+    basedIn: "Traverse City, MI",
+    homeVenueSlug: "low-bar",
+    upcomingShows: ["Rooftop DJ Night — Low Bar — Aug 22"],
+    socials: [{ label: "Instagram", url: instagramSearch("DJ Bay Static Traverse City") }],
   },
 ];
 
